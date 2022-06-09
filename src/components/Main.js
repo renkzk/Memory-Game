@@ -1,8 +1,13 @@
 import React from "react"
 import styled from "styled-components"
+import Scoreboard from "./Scoreboard"
 
 export default function Main() {
-  return <MainStyled>Main</MainStyled>
+  return (
+    <MainStyled>
+      <Scoreboard />
+    </MainStyled>
+  )
 }
 
 const MainStyled = styled.main`

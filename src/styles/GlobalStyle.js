@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
     background-color: ${({ theme }) => theme.colors.light};
     color: ${({ theme }) => theme.colors.dark};
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1.7rem;
   }
 
   #root {
