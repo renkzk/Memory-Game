@@ -26,6 +26,16 @@ const GridStyled = styled.div`
   }
 
   .pokemon-card {
-    width: 15rem;
+    width: 17rem;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: ${({ theme }) => theme.shadow.boxShadow};
+    border-radius: 20px;
+    transition: 150ms;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `

@@ -42,9 +42,10 @@ export default function Main() {
 }
 
 const MainStyled = styled.main`
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 6rem;
   align-items: center;
   height: 100%;
 `

@@ -12,12 +12,17 @@ export default function Scoreboard() {
 
 const ScoreboardStyled = styled.div`
   display: flex;
-  gap: 4rem;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  gap: 10rem;
 
   .score {
     background: ${(props) => props.color};
-    padding: 1rem;
+    padding: 1rem 3rem;
     border-radius: 20px;
+    box-shadow: ${({ theme }) => theme.shadow.boxShadow};
   }
 
   .current {
