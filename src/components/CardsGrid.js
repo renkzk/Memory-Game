@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-export default function CardsGrid({ pokemons }) {
+export default function CardsGrid({ pokemons, handlePokemonClick }) {
   const pokemonCards = pokemons.map((pokemon) => {
     const { id, name, image } = pokemon
     return (
-      <div key={id} className="pokemon-card">
+      <div key={id} className="pokemon-card" onClick={handlePokemonClick}>
         <img src={image} alt="" />
         {name}
       </div>
@@ -36,6 +36,10 @@ const GridStyled = styled.div`
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    img {
+      pointer-events: none; //fix pokemon div not being selected as event when clicked
     }
   }
 `
