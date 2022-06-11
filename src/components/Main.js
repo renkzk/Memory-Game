@@ -6,8 +6,11 @@ import { capitalizeFirstLetter } from "../utils"
 import { shuffleArray } from "../utils"
 
 export default function Main() {
-  const [pokemons, setPokemons] = useState([])
   const numberOfPokemonsToFetch = 12
+  const [pokemons, setPokemons] = useState([])
+  const [clickedPokemons, setClickedPokemons] = useState([])
+  const [currentScore, setCurrentScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
 
   useEffect(() => {
     const loadCards = async () => {
@@ -33,10 +36,30 @@ export default function Main() {
     return pokemons
   }
 
+  const handlePokemonClick = (e) => {
+    const clickedPokemon = e.target.textContent
+    setPokemons(shuffleArray(pokemons))
+    playRound(clickedPokemon)
+  }
+
+  const playRound = (newClickedPokemon) => {
+    if (clickedPokemons.includes(newClickedPokemon)) {
+      resetGame()
+    } else {
+      setClickedPokemons((prevState) => [...prevState, newClickedPokemon])
+    }
+    console.log(clickedPokemons)
+  }
+
+  const resetGame = () => {
+    setClickedPokemons([])
+    console.log(clickedPokemons)
+  }
+
   return (
     <MainStyled>
       <Scoreboard />
-      <CardsGrid pokemons={pokemons} />
+      <CardsGrid pokemons={pokemons} handlePokemonClick={handlePokemonClick} />
     </MainStyled>
   )
 }
