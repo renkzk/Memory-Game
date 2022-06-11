@@ -16,7 +16,7 @@ export default function CardsGrid({ pokemons }) {
 
 const GridStyled = styled.div`
   display: grid;
-  gap: 5rem;
+  gap: 4rem;
   grid-template-columns: repeat(4, 1fr);
   @media (max-width: 900px) {
     grid-template-columns: repeat(3, 1fr);

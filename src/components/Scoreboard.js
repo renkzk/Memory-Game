@@ -12,11 +12,11 @@ export default function Scoreboard() {
 
 const ScoreboardStyled = styled.div`
   display: flex;
+  gap: 13rem;
   @media (max-width: 700px) {
     flex-direction: column;
     gap: 2rem;
   }
-  gap: 10rem;
 
   .score {
     background: ${(props) => props.color};
