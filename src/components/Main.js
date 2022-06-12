@@ -46,19 +46,21 @@ export default function Main() {
     if (clickedPokemons.includes(newClickedPokemon)) {
       resetGame()
     } else {
+      const newScore = currentScore + 1
+      setCurrentScore(newScore)
+      if (newScore > bestScore) setBestScore(newScore)
       setClickedPokemons((prevState) => [...prevState, newClickedPokemon])
     }
-    console.log(clickedPokemons)
   }
 
   const resetGame = () => {
     setClickedPokemons([])
-    console.log(clickedPokemons)
+    setCurrentScore(0)
   }
 
   return (
     <MainStyled>
-      <Scoreboard />
+      <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <CardsGrid pokemons={pokemons} handlePokemonClick={handlePokemonClick} />
     </MainStyled>
   )

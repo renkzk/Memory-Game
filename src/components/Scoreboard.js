@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 
-export default function Scoreboard() {
+export default function Scoreboard({ currentScore, bestScore }) {
   return (
     <ScoreboardStyled>
-      <div className="current score">Current Score: 0</div>
-      <div className="best score">Best Score: 0</div>
+      <div className="current score">Current Score: {currentScore}</div>
+      <div className="best score">Best Score: {bestScore}</div>
     </ScoreboardStyled>
   )
 }
