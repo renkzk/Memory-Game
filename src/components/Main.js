@@ -6,7 +6,7 @@ import { capitalizeFirstLetter } from "../utils"
 import { shuffleArray } from "../utils"
 
 export default function Main() {
-  const numberOfPokemonsToFetch = 12
+  const numberOfPokemonsToFetch = 36
   const [pokemons, setPokemons] = useState([])
   const [clickedPokemons, setClickedPokemons] = useState([])
   const [currentScore, setCurrentScore] = useState(0)
@@ -23,7 +23,7 @@ export default function Main() {
   const fetchPokemons = async (number) => {
     const pokemons = []
 
-    for (let i = 1; i <= number; i++) {
+    for (let i = 3; i <= number; i += 3) {
       const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${i}`
       const response = await fetch(pokemonUrl)
       const pokemon = await response.json()
