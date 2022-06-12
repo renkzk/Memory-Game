@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/Memory-Game/static/js/main.073a7be4.js",
+    "static/media/logo.png": "/Memory-Game/static/media/logo.6b38aabc5988ddd9319b.png",
+    "index.html": "/Memory-Game/index.html",
+    "main.073a7be4.js.map": "/Memory-Game/static/js/main.073a7be4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.073a7be4.js"
+  ]
+}
