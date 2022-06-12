@@ -19,7 +19,6 @@ const ScoreboardStyled = styled.div`
   }
 
   .score {
-    background: ${(props) => props.color};
     padding: 1rem 3rem;
     border-radius: 20px;
     box-shadow: ${({ theme }) => theme.shadow.boxShadow};

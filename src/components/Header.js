@@ -6,7 +6,10 @@ export default function Header() {
   return (
     <>
       <HeaderStyled>
-        <img src={logo} />
+        <img src={logo} className="logo" />
+        <div className="rules">
+          Get points by clicking on an image but don't click on any more than once!
+        </div>
       </HeaderStyled>
       <Line>
         <Circle size="60px" borderWidth="6px">
@@ -29,10 +32,25 @@ const HeaderStyled = styled.header`
     rgba(239, 62, 51, 1) 100%
   );
 
-  img {
+  .logo {
     transform: scale(0.5);
     min-width: 400px;
     max-width: 900px;
+    cursor: pointer;
+  }
+
+  .rules {
+    display: none;
+    position: absolute;
+    top: 30%;
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: whitesmoke;
+    padding: 5rem;
+    border-radius: 20px;
+  }
+  .logo:hover + .rules {
+    display: flex;
   }
 `
 
