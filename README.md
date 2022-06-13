@@ -1,3 +1,8 @@
+This is a Memory Game built with React.
+Rules: Get points by clicking on an image but don't click on any more than once.
+
+<a href='https://ren-isCoding.github.io/Memory-Game'>Click here to see the app</a>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
