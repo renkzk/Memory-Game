@@ -67,7 +67,7 @@ export default function Main() {
 }
 
 const MainStyled = styled.main`
-  padding: 4rem 0;
+  padding: 3rem 0;
   display: flex;
   flex-direction: column;
   gap: 6rem;

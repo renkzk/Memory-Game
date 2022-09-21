@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.dark};
     font-family: 'Kdam Thmor Pro', sans-serif;
     font-size: 1.7rem;
+
   }
 
   #root {
@@ -59,6 +60,11 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  * {
+  scrollbar-width: thin;
+  scrollbar-color: #383838 #eeeeee;
+}
 `
 
 export default GlobalStyle
