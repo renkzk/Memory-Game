@@ -58,10 +58,22 @@ export default function Main() {
     setCurrentScore(0)
   }
 
+  function showVictoryScreen() {
+    return (
+      <VictoryStyled>
+        <div className="victory-screen">
+          <h1>You Win!</h1>
+          <button onClick={(e) => resetGame()}>Reset</button>
+        </div>
+      </VictoryStyled>
+    )
+  }
+
   return (
     <MainStyled>
       <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       <CardsGrid pokemons={pokemons} handlePokemonClick={handlePokemonClick} />
+      {currentScore > 11 ? showVictoryScreen() : null}
     </MainStyled>
   )
 }
@@ -73,4 +85,43 @@ const MainStyled = styled.main`
   gap: 6rem;
   align-items: center;
   height: 100%;
+  position: relative;
+`
+const VictoryStyled = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .victory-screen {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 10rem;
+  }
+
+  h1 {
+    color: yellow;
+    font-size: 10rem;
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 3rem;
+    width: 20rem;
+    background: red;
+    color: whitesmoke;
+    border-radius: 20px;
+    &:hover {
+      background: rgb(156, 24, 24);
+    }
+  }
 `
