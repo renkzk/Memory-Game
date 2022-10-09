@@ -7,6 +7,7 @@ export default function Header() {
     <>
       <HeaderStyled>
         <img src={logo} className="logo" />
+        <span className="show-rules">Show rules</span>
         <div className="rules">
           Get points by clicking on an image but don't click on any more than once!
         </div>
@@ -21,7 +22,9 @@ export default function Header() {
 }
 
 const HeaderStyled = styled.header`
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: linear-gradient(
@@ -36,20 +39,32 @@ const HeaderStyled = styled.header`
     transform: scale(0.5);
     min-width: 400px;
     max-width: 900px;
+  }
+
+  .show-rules {
+    position: relative;
+    bottom: 2.5rem;
+    z-index: 11;
     cursor: pointer;
+    font-size: 2.5rem;
+    color: whitesmoke;
+    &:hover {
+      opacity: 0;
+    }
   }
 
   .rules {
     display: none;
     position: absolute;
-    top: 30%;
+    top: 50%;
     font-size: 2rem;
     background: rgba(0, 0, 0, 0.7);
     color: whitesmoke;
     padding: 5rem;
     border-radius: 20px;
+    z-index: 10;
   }
-  .logo:hover + .rules {
+  .show-rules:hover + .rules {
     display: flex;
   }
 `
@@ -66,6 +81,7 @@ const Circle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
   height: ${(props) => props.size};
   width: ${(props) => props.size};
   border: ${(props) => props.borderWidth} solid ${({ theme }) => theme.colors.dark};
